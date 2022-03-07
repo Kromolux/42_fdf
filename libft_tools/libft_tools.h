@@ -6,7 +6,7 @@
 /*   By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 13:12:52 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/02/24 16:59:12 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/03/01 08:53:27 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 #  define BUFFER_SIZE 16384
 # endif
 
-
 //string evaluations
 size_t	ft_strlen(const char *s);
 char	*ft_char_in_str(const char *s, const char c);
@@ -27,6 +26,7 @@ int		ft_char_first(const char *s, const char c, size_t size);
 size_t	ft_words_in_str(char const *s, char c);
 int		ft_string_compare(const char *s1, const char *s2);
 size_t	ft_count_of_in_str(const char *s, const char c);
+int		ft_check_hex(const char *input);
 
 //string manipulations
 size_t	ft_replace_in_string(char *s, char c_replace, char c_with);
@@ -40,6 +40,7 @@ size_t	ft_copy(char *dst, char *src, size_t size);
 //numbers
 char	*ft_int_to_string(long n);
 int		ft_string_to_int(const char *nptr);
+int		ft_string_to_hex(char *input);
 
 //memory reallocation and string copy + memory free
 char	*ft_realloc(char *s1, char *s2, int free_s1, int free_s2);

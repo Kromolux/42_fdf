@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_check_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 13:24:26 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/02/28 15:55:22 by rkaufman         ###   ########.fr       */
+/*   Created: 2022/03/01 07:11:08 by rkaufman          #+#    #+#             */
+/*   Updated: 2022/03/01 08:53:11 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_tools.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_check_hex(const char *input)
 {
-	size_t	i;
+	int	i;
 
-	i = 0;
-	while (*s)
+	if (!ft_string_compare(input, ",0x"))
+		return (0);
+	i = 3;
+	while (input[i])
 	{
-		s++;
+		if ((input[i] < '0' && input[i] > '9')
+			&& (input[i] < 'a' && input[i] > 'f')
+			&& (input[i] < 'A' && input[i] > 'F'))
+			return (0);
 		i++;
 	}
-	return (i);
+	return (1);
 }

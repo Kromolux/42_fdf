@@ -6,7 +6,7 @@
 /*   By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 17:29:04 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/02/24 18:13:28 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/03/01 08:54:46 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,15 @@ char	*ft_sprintf(const char *s, ...)
 	while (s[i])
 	{
 		if (s[i] == '%')
-			output = ft_realloc(output, ft_sprintf_handling(s, &i, &args), 1 , 1);
+			output = ft_realloc(output, ft_sprintf_handling(s, &i, &args),
+					1, 1);
 		else
 		{
 			i_start = i;
 			while (s[i] && s[i] != '%')
 				i++;
-			output = ft_realloc(output, ft_get_substring(s, i_start, i - i_start), 1, 1);
+			output = ft_realloc(output, ft_get_substring(s, i_start,
+						i - i_start), 1, 1);
 		}
 	}
 	va_end(args);

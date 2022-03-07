@@ -6,7 +6,7 @@
 #    By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/24 15:24:04 by rkaufman          #+#    #+#              #
-#    Updated: 2022/02/24 16:59:36 by rkaufman         ###   ########.fr        #
+#    Updated: 2022/03/01 07:12:06 by rkaufman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,12 +28,14 @@ SRCFILES 	:=	ft_char_first.c \
 				ft_realloc.c \
 				ft_replace_in_string.c \
 				ft_split.c \
+				ft_strlen.c \
 				ft_string_compare.c \
 				ft_string_to_int.c \
-				ft_strlen.c \
-				ft_words_in_str.c \
 				ft_string_dup.c \
-				ft_calloc.c
+				ft_string_to_hex.c \
+				ft_words_in_str.c \
+				ft_calloc.c \
+				ft_check_hex.c
 
 OBJFILES	:= $(SRCFILES:%.c=%.o)
 

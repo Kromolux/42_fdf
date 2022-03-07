@@ -6,7 +6,7 @@
 /*   By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 13:31:00 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/02/24 13:31:51 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/03/01 05:55:46 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,11 @@
 
 char	*ft_char_in_str(const char *s, const char c)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
+	while (*s)
 	{
-		if (s[i] == c)
-			return ((char *)&s[i]);
-		i++;
+		if (*s == c)
+			return ((char *)s);
+		s++;
 	}
 	return (NULL);
 }

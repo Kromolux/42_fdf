@@ -6,7 +6,7 @@
 /*   By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 13:45:17 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/02/24 13:48:33 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/03/01 05:56:14 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,22 +30,22 @@ char	**ft_split(char const *s, const char c)
 static void	ft_create_substrings(char const *s, const char c, char **array)
 {
 	size_t	i;
-	size_t	start;
 	size_t	word_count;
 
 	i = 0;
 	word_count = 0;
-	while (s[i])
+	while (*s)
 	{
-		if (s[i] == c)
-			i++;
+		if (*s == c)
+			s++;
 		else
 		{
-			start = i;
+			i = 0;
 			while (s[i] && s[i] != c)
 				i++;
-			array[word_count] = ft_get_substring(s, start, i - start);
+			array[word_count] = ft_get_substring(s, 0, i);
 			word_count++;
+			s += i;
 		}
 	}
 	array[word_count] = NULL;

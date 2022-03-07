@@ -6,7 +6,7 @@
 /*   By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:13:35 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/02/24 16:08:42 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/03/01 05:55:51 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,17 @@
 
 size_t	ft_replace_in_string(char *s, char c_replace, char c_with)
 {
-	size_t	i;
 	size_t	count;
 
-	i = 0;
 	count = 0;
-	while (s[i])
+	while (*s)
 	{
-		if (s[i] == c_replace)
+		if (*s == c_replace)
 		{
-			s[i] = c_with;
+			*s = c_with;
 			count++;
 		}
-		i++;
+		s++;
 	}
 	return (count);
 }

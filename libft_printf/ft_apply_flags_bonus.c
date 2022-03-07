@@ -6,7 +6,7 @@
 /*   By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 09:24:52 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/02/24 17:12:05 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/03/01 08:51:46 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ static char	*ft_apply_right_aligned(char *prefix, char *s, t_flags *flags)
 	if (flags->conversion == 'c' && len == 0)
 		len = 1;
 	len += (int) ft_strlen(prefix);
-	if (ft_char_in_str("cspdiuxX", flags->conversion) && len < flags->right_aligned)
+	if (ft_char_in_str("cspdiuxX", flags->conversion)
+		&& len < flags->right_aligned)
 		prefix = ft_create_prefix(prefix, s, flags, len);
 	return (prefix);
 }
@@ -96,7 +97,8 @@ static char	*ft_apply_left_aligned(char *prefix, char *s, t_flags *flags)
 	if (flags->conversion == 'c' && len == 0)
 		len = 1;
 	len += (int) ft_strlen(prefix);
-	if (ft_char_in_str("cspdiuxX", flags->conversion) && len <= flags->left_aligned)
+	if (ft_char_in_str("cspdiuxX", flags->conversion)
+		&& len <= flags->left_aligned)
 	{
 		tmp1 = ft_add_char(' ', flags->left_aligned - len);
 		if (flags->conversion == 'c' && s[0] == '\0')

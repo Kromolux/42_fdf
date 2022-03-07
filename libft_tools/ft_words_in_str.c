@@ -6,7 +6,7 @@
 /*   By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 13:46:53 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/02/24 13:47:37 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/02/28 16:23:21 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,17 @@
 
 size_t	ft_words_in_str(char const *s, const char c)
 {
-	size_t	i;
 	size_t	word_count;
 
-	i = 0;
 	word_count = 0;
-	while (s[i])
+	while (*s)
 	{
-		if (s[i] == c)
-			i++;
+		if (*s == c)
+			s++;
 		else
 		{
-			while (s[i] && s[i] != c)
-				i++;
+			while (*s && *s != c)
+				s++;
 			word_count++;
 		}
 	}

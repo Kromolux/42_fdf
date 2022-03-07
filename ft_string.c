@@ -6,11 +6,13 @@
 /*   By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 11:53:48 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/02/24 18:05:57 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/03/01 09:01:07 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+static int	ft_check_number(int i, char c1, char c2);
 
 size_t	ft_count_of_columns(char *s, char c)
 {
@@ -35,22 +37,57 @@ size_t	ft_count_of_columns(char *s, char c)
 	return (0);
 }
 
-char	*ft_get_screen_resolution_str(t_engine *engine)
+void	ft_check_input_exit_on_error(t_map *screen, char **input)
 {
-	//char	*w;
-	//char	*h;
-	char	*output;
-	//int		i;
-	output = ft_sprintf("%ix%i", engine->screen->resolution.width, engine->screen->resolution.height);
-	/*
-	w = ft_int_to_string(engine->screen->resolution.width);
-	h = ft_int_to_string(engine->screen->resolution.height);
-	output = (char *) malloc(ft_strlen(w) + ft_strlen(h) + 2);
-	i = ft_copy(output, w, 0);
-	i += ft_copy(&output[i], "x", 0);
-	ft_copy(&output[i], h, 0);
-	free(w);
-	free(h);
-	*/
-	return (output);
+	size_t	i_row;
+
+	i_row = 0;
+	while (input[i_row])
+	{
+		if (!ft_valid_number(input[i_row]))
+		{
+			ft_printf("Error! Invalid number [%s] in .fdf file input[%i] by"
+				" function ft_check_input_exit_on_error\n", input[i_row], i_row);
+			free(screen);
+			ft_free_char_array(input);
+			exit(1);
+		}
+		i_row++;
+	}
+}
+
+int	ft_valid_number(char *argv)
+{
+	int		i;
+	int		i_arg;
+
+	i = 0;
+	i_arg = 0;
+	while (argv[i])
+	{
+		if (argv[i] == ' ')
+		{
+			while (argv[i] == ' ')
+				i++;
+			i_arg = 0;
+		}
+		if (argv[i] < '0' || argv[i] > '9')
+		{
+			if (argv[i] == ',' && !ft_check_hex(&argv[i]))
+			{
+				if (!ft_check_number(i_arg, argv[i], argv[i + 1]))
+					return (0);
+			}
+		}
+		i_arg++;
+		i++;
+	}
+	return (1);
+}
+
+static int	ft_check_number(int i, char c1, char c2)
+{
+	if (i > 0 || (c1 != '+' && c1 != '-') || c2 < '0' || c2 > '9')
+		return (0);
+	return (1);
 }
