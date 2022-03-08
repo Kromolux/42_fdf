@@ -6,7 +6,7 @@
 /*   By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 11:31:38 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/03/08 06:38:14 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/03/08 19:08:09 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@
 # define XK_X 0x07
 # define XK_C 0x08
 # define XK_PLUS 69
+# define XK_PLUS2 30
 # define XK_MINUS 78
+# define XK_MINUS2 44
 # define XK_LEFT 123
 # define XK_RIGHT 124
 # define XK_UP 126

@@ -6,7 +6,7 @@
 #    By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 11:30:26 by rkaufman          #+#    #+#              #
-#    Updated: 2022/03/08 13:41:57 by rkaufman         ###   ########.fr        #
+#    Updated: 2022/03/08 19:04:13 by rkaufman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,11 +54,14 @@ CFLAGS		:=	-Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME): makelibft $(OBJ)
+$(NAME): makemlx makelibft $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -L$(LIBFT_PRINTF_PATH) -lft_printf -L$(LIBFT_TOOLS_PATH) -lft_tools -L$(MLX_PATH) -l$(MLX_LIB) -L/usr/lib -lm -lz -framework OpenGL -framework AppKit -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -O3 -c $< -o $@
+
+makemlx:
+	make -C $(MLX_PATH)
 
 makelibft:
 	make -C $(LIBFT_TOOLS_PATH)
@@ -66,6 +69,7 @@ makelibft:
 
 clean: cleanlibft
 	rm -f $(OBJ)
+	make -C $(MLX_PATH) clean
 
 cleanlibft:
 	make -C $(LIBFT_TOOLS_PATH) clean
