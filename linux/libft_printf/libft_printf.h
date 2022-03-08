@@ -6,7 +6,7 @@
 /*   By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 09:03:44 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/03/08 15:02:04 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/03/08 16:45:56 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ int		ft_printf(const char *s, ...);
 
 //ft_sprintf_bonus.c
 char	*ft_sprintf(const char *s, ...);
-
 
 //ft_init_flags_bonus.c
 t_flags	*ft_initialize_flags(void);

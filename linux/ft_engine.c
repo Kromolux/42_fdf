@@ -6,7 +6,7 @@
 /*   By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 13:19:38 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/03/08 11:07:16 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/03/08 16:58:47 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,11 @@ static void	ft_error_engine_init(char *function, char *variable,
 		mlx_destroy_image(engine->mlx, engine->img1.img);
 	if (error >= 3)
 		mlx_destroy_image(engine->mlx, engine->img0.img);
+	if (error >= 2)
+		mlx_destroy_window(engine->mlx, engine->window);
 	if (error >= 1)
 	{
+		mlx_destroy_display(engine->mlx);
 		free(engine->mlx);
 	}
 	ft_free_map(engine->screen);
