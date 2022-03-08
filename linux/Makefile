@@ -6,7 +6,7 @@
 #    By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 11:30:26 by rkaufman          #+#    #+#              #
-#    Updated: 2022/03/03 13:26:48 by rkaufman         ###   ########.fr        #
+#    Updated: 2022/03/08 10:59:39 by rkaufman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ LIBFT_PRINTF_LIB	:=	libft_printf.a
 LIBFT_PRINTF_PATH	:=	libft_printf
 
 LIB_PATH			:=	./
-MLX_PATH			:=	mlx_linux
+MLX_PATH			:=	minilibx-linux
 MLX_LIB				:=	mlx_Linux
 
 CC					:=	gcc

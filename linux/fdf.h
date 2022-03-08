@@ -6,7 +6,7 @@
 /*   By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 11:31:38 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/03/02 20:21:14 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/03/08 11:03:23 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 //close()
 # include <math.h>
 # include <X11/keysym.h>
-# include "mlx_linux/mlx.h"
+# include "minilibx-linux/mlx.h"
 # define WIDTH 1600
 # define HEIGHT 900
 # define TITLE "<FdF> - <42 Wolfsburg Project> - <made by Rene Kaufmann>"
@@ -133,9 +133,10 @@ int				ft_error_file(char *function, char *file);
 int				ft_error_file_result(char *function, char *file, int fd);
 int				ft_error_number(char *function, char *value, size_t row,
 					size_t column);
+void			ft_error_split(t_map *screen, char *input);
 
 //ft_error_map.c
-void			ft_error_split(t_map *screen, char *input);
+void			ft_error_input(t_map *screen, char **string_array);
 void			ft_error_map(t_map *screen, char **string_array);
 void			ft_error_proj(t_map *screen, char **string_array);
 void			ft_error_map_row(t_map *screen, char **string_array,

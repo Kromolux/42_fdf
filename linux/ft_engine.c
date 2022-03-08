@@ -6,7 +6,7 @@
 /*   By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 13:19:38 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/03/08 10:40:14 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/03/08 11:07:16 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int	ft_engine_destroy(t_engine *engine)
 	mlx_destroy_image(engine->mlx, engine->img0.img);
 	mlx_destroy_image(engine->mlx, engine->img1.img);
 	mlx_destroy_window(engine->mlx, engine->window);
+	mlx_destroy_display(engine->mlx);
 	free(engine->mlx);
 	ft_free_map(engine->screen);
 	free(engine->file);
