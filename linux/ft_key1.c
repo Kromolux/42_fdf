@@ -6,7 +6,7 @@
 /*   By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 06:51:18 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/03/02 19:40:27 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/03/08 19:13:39 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	ft_key_zoom(int keycode, t_engine *engine)
 {
-	if (keycode == XK_PLUS)
+	if (keycode == XK_PLUS || keycode == XK_plus)
 	{
 		if (engine->screen->zoom >= 20)
 			engine->screen->zoom += 5;
 		else
 			engine->screen->zoom += 1;
 	}
-	else if (keycode == XK_MINUS)
+	else if (keycode == XK_MINUS || keycode == XK_minus)
 	{
 		if (engine->screen->zoom >= 25)
 			engine->screen->zoom -= 5;

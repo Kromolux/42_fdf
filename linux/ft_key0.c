@@ -6,7 +6,7 @@
 /*   By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:57:03 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/03/08 17:34:03 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/03/08 19:16:28 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ int	ft_key(int keycode, t_engine *engine)
 	else if (keycode == XK_i || keycode == XK_p)
 		ft_key_projection_change(keycode, engine);
 	else if (keycode == XK_PLUS || keycode == XK_MINUS
-		|| keycode == XK_f || keycode == XK_v)
+		|| keycode == XK_f || keycode == XK_v
+		|| keycode == XK_plus || keycode == XK_minus)
 		ft_key_zoom(keycode, engine);
 	else if (keycode == XK_Home)
 		ft_key_center_view(keycode, engine);

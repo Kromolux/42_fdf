@@ -6,7 +6,7 @@
 /*   By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:57:03 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/03/08 19:07:13 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/03/08 19:11:43 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	ft_key(int keycode, t_engine *engine)
 {
-	ft_printf("keycode=%i\n", keycode);
 	if (keycode == XK_ESC)
 		ft_engine_destroy(engine);
 	else if (keycode == XK_LEFT || keycode == XK_RIGHT
