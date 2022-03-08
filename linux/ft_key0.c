@@ -6,7 +6,7 @@
 /*   By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:57:03 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/03/02 08:42:35 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/03/08 17:34:03 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	ft_key(int keycode, t_engine *engine)
 {
-	ft_printf("key function called! keycode=%i\n", keycode);
 	if (keycode == XK_Escape)
 		ft_engine_destroy(engine);
 	else if (keycode == XK_Left || keycode == XK_Right
