@@ -6,7 +6,7 @@
 /*   By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 11:53:48 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/03/08 10:43:06 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/03/08 15:21:10 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,17 +59,17 @@ void	ft_check_input_exit_on_error(t_map *screen, char **input)
 int	ft_valid_number(char *argv)
 {
 	int		i;
-	int		len;
 
 	i = 0;
-	len = ft_strlen(argv);
 	while (argv[i])
 	{
 		if (argv[i] < '0' || argv[i] > '9')
 		{
-			if (argv[i] == ',' && ft_check_hex(&argv[i]))
+			if (argv[i] != '+' && argv[i] != '-' && argv[i] != ',')
+				return (0);
+			else if (argv[i] == ',' && ft_check_hex(&argv[i]))
 				break ;
-			else if (argv[i] != '+' && argv[i] != '-')
+			else
 				return (0);
 		}
 		i++;

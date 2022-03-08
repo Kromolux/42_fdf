@@ -6,12 +6,12 @@
 /*   By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 09:03:44 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/02/24 17:44:10 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/03/08 15:02:04 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_BONUS_H
-# define LIBFTPRINTF_BONUS_H
+#ifndef LIBFT_PRINTF_H
+# define LIBFT_PRINTF_H
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>

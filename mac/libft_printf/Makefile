@@ -6,13 +6,13 @@
 #    By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/14 19:38:27 by rkaufman          #+#    #+#              #
-#    Updated: 2022/02/24 17:32:12 by rkaufman         ###   ########.fr        #
+#    Updated: 2022/03/08 15:00:32 by rkaufman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 		:=	libft_printf.a
 CC 			:=	gcc
-HEADERFILE	:=	libftprintf_bonus.h
+HEADERFILE	:=	libft_printf.h
 
 SRCFILES 	:=	ft_printf_bonus.c \
 				ft_sprintf_bonus.c \

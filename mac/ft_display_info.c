@@ -6,7 +6,7 @@
 /*   By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:15:57 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/03/07 21:54:36 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/03/08 15:50:07 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ static void	ft_display_info1(t_engine *engine, int x, int color)
 	str = ft_int_to_string(engine->screen->zoom);
 	mlx_string_put(engine->mlx, engine->window, x + 200, 180, color, str);
 	free(str);
+	mlx_string_put(engine->mlx, engine->window, x, 300, color,
+		"center view:      pos1");
 }
 
 static void	ft_display_info2(t_engine *engine, int x, int color)
